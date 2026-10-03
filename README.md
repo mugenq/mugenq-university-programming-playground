@@ -6,10 +6,10 @@ The repository includes both more substantial projects and a **learning archive*
 
 ## Highlights
 
-### BeatSolver / Beat Timer
-`beatsolver/`
+### BeatSolver / Timing Solver
+Dedicated repository: https://github.com/mugenq/mugenq-timing-solver
 
-An experimental audio-analysis project for estimating tempo, timing sections, phase, and beat-grid candidates from music, with external evaluation against osu! beatmaps. The current code separates prediction from evaluation so map data is not used by the predictor.
+An experimental audio-analysis project for estimating tempo, timing sections, phase, and beat-grid candidates from music, with external evaluation against osu! beatmaps. The dedicated repository is now the primary project home; the `beatsolver/` folder here is retained as an archival snapshot.
 
 Key themes: signal processing, onset detection, local tempo estimation, grid/phase matching, benchmark design, and iterative algorithm evaluation.
 
