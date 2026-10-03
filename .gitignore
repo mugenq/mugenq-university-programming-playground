@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+.ipynb_checkpoints/
+
+# ML/data caches
+.cache/
+*.h5
+*.keras
+*.ckpt
+
+# Build artifacts
+build/
+dist/
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.pkg
+*.pyz
+
+# Local / generated data
+beatsolver/songs/**/*.mp3
+beatsolver/songs/**/*.osu
+python-projects/output_folder/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
