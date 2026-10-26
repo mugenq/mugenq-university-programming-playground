@@ -1,0 +1,31 @@
+name: Redeem Wheel Windows build (manual review only)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: tools/redeem-wheel
+    steps:
+      - name: Checkout reviewed source
+        uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install build tool
+        run: python -m pip install pyinstaller
+      - name: Run tests
+        run: python -m unittest discover -v
+      - name: Build Windows EXE
+        shell: cmd
+        run: python -m PyInstaller --noconfirm --clean --onefile --windowed --name RedeemWheel --icon assets\redeem_wheel.ico --add-data "assets\redeem_wheel.png;assets" --add-data "assets\redeem_wheel.ico;assets" redeem_wheel.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: RedeemWheel-Windows-UNVERIFIED
+          path: tools/redeem-wheel/dist/RedeemWheel.exe
+          if-no-files-found: error
